@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "healthbot"
+version = "0.1.0"
+description = "Grounded healthcare document assistant prototype"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Proprietary" }
+authors = [
+  { name = "HealthBot Contributors" },
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
