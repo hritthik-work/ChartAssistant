@@ -1,0 +1,46 @@
+DOCUMENT_ID: DOC-GUIDE-003
+DOCUMENT_TITLE: Synthetic Diagnostic Specificity and Linkage Guide
+DOCUMENT_TYPE: synthetic_documentation_guide
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Clinical Documentation Office
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This synthetic reference explains how a source-grounded workflow should handle
+diagnostic specificity and relationships between conditions.
+
+2. USE ONLY SUPPORTED SPECIFICITY
+The workflow should state only the level of detail present in the source. If a
+chart states "chronic kidney disease stage 3b," that documented stage can be
+reported. If a chart provides only a laboratory finding, it must not invent a
+chronic kidney disease stage or diagnosis.
+
+3. DO NOT INVENT LINKAGE
+Two conditions appearing in the same chart are not automatically causally linked.
+Diabetes and a reduced eGFR result do not establish diabetic kidney disease.
+Anemia in a patient with chronic kidney disease does not establish that CKD caused
+the anemia unless a qualified source explicitly states the relationship.
+
+4. CODE LOOKUP BOUNDARY
+A limited code-reference table may provide a descriptor for a requested code.
+It does not determine whether the patient has the condition, whether additional
+specificity exists, or whether a code is appropriate for a real-world claim. The
+chart evidence must be considered first, and qualified review remains necessary.
+
+5. INSUFFICIENT DOCUMENTATION
+If a requested degree of severity, laterality, complication, or causal linkage is
+not documented, the safe outcome is to report that it is not established by the
+retrieved material. Do not select a more specific alternative merely because it
+is clinically plausible.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

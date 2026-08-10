@@ -1,0 +1,44 @@
+DOCUMENT_ID: DOC-CLIN-P004-002
+DOCUMENT_TITLE: Primary Care Chronic Care Coordination Visit
+DOCUMENT_TYPE: primary_care_chronic_care_visit
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P004
+ENCOUNTER_ID: SYN-ENC-011
+ENCOUNTER_DATE: 2031-06-14
+AUTHOR_ROLE: Primary Care Clinician
+ORGANIZATION: Synthetic River Family Clinic
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+INTERVAL HISTORY
+SYN-P004 returns for chronic-condition coordination after nephrology consultation.
+The patient reports adherence to the current blood-pressure treatment plan and
+has not had swelling, chest discomfort, or a recent urgent care visit. The
+patient understands the nephrology follow-up schedule.
+
+ACTIVE CONDITIONS
+1. Chronic kidney disease stage 3b. This is an established diagnosis documented
+   by nephrology and reviewed in this primary-care visit.
+2. Essential hypertension. Blood-pressure management is continued with attention
+   to renal health.
+
+MEDICATION AND CARE REVIEW
+The medication list is reconciled. The patient is reminded to discuss new over-
+the-counter medicines with the care team because of chronic kidney disease. No
+new kidney-related symptom is reported. No acute kidney injury is diagnosed.
+
+PLAN
+Continue the current hypertension plan, complete ordered laboratory monitoring,
+and maintain scheduled nephrology follow-up. The patient should contact the
+clinic for new edema, a significant change in urine output, or medication
+concerns. This visit coordinates ongoing care and does not change the CKD stage.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

@@ -1,0 +1,43 @@
+DOCUMENT_ID: DOC-POLICY-002
+DOCUMENT_TITLE: Synthetic Payer Alpha Documentation Completeness Policy
+DOCUMENT_TYPE: synthetic_payer_policy
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Payer Alpha
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This fictional document defines completeness checks for the synthetic dataset. It
+does not replace any real payer, provider, or regulatory requirement.
+
+2. COMPLETENESS ATTRIBUTES
+For the synthetic workflow, a clinical document should contain a stable document
+identifier, patient association, encounter date, author role, and narrative
+content. Missing attributes should be visible to a reviewer rather than silently
+assumed by an automated system.
+
+3. INCOMPLETE DOCUMENTS
+An unsigned, undated, truncated, or ambiguously associated source may be useful
+for operational investigation, but it should be flagged as incomplete in this
+fictional policy. It must not be represented as having facts that it does not
+clearly contain.
+
+4. AUTOMATED OUTPUT
+Structured output should communicate whether evidence is present, insufficient,
+or requires review. A successful JSON response does not prove that clinical
+documentation is complete or suitable for real-world use.
+
+5. LIMITATION
+This is a fictional synthetic example. It does not state actual payer
+signature, submission, reimbursement, or record-retention requirements.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

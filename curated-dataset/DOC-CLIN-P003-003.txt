@@ -1,0 +1,43 @@
+DOCUMENT_ID: DOC-CLIN-P003-003
+DOCUMENT_TITLE: Primary Care Hypertension Follow-Up
+DOCUMENT_TYPE: primary_care_follow_up
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P003
+ENCOUNTER_ID: SYN-ENC-009
+ENCOUNTER_DATE: 2031-08-17
+AUTHOR_ROLE: Primary Care Clinician
+ORGANIZATION: Synthetic Meadow Family Health
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+INTERVAL HISTORY
+SYN-P003 returns for hypertension management. The patient reports taking
+amlodipine consistently and has no dizziness, chest pain, shortness of breath,
+or leg swelling. Right-knee discomfort is improved after activity adjustments,
+and the patient is aware of the orthopedic assessment of osteoarthritis.
+
+MEDICAL CONTEXT
+Essential hypertension remains the active chronic condition addressed today.
+Right-knee osteoarthritis is a separate musculoskeletal condition. The family
+history of diabetes recorded at the wellness visit remains family history only;
+there is no personal diabetes diagnosis documented in the records reviewed for
+this visit. No COPD diagnosis or treatment is documented.
+
+ASSESSMENT
+1. Essential hypertension, stable on the current regimen by available visit data.
+2. Right-knee osteoarthritis, managed conservatively.
+
+PLAN
+Continue amlodipine, routine activity, and home blood-pressure awareness. Continue
+the knee plan and contact the clinic for new limitation or swelling. Routine
+follow-up is planned in six months.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

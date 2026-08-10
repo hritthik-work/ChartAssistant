@@ -1,0 +1,47 @@
+DOCUMENT_ID: DOC-GUIDE-002
+DOCUMENT_TITLE: Synthetic Condition Status and Temporal Context Guide
+DOCUMENT_TYPE: synthetic_documentation_guide
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Clinical Documentation Office
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This document provides fictional examples for preserving condition status over
+time in a retrieval workflow. It is not official clinical, coding, or payer
+guidance.
+
+2. STATUS CATEGORIES
+An acute condition applies to the specific episode described by the source. A
+chronic condition may continue across visits when documentation supports it. A
+historical condition describes a past event. A residual deficit or sequela may
+persist after the original event and must not be represented as a new acute event.
+
+3. CHRONOLOGY
+The encounter date, source type, and narrative context should be retained during
+ingestion. A discharge summary may describe an acute hospitalization, while a
+later follow-up may state that symptoms have improved. The later source should
+not be read as evidence that the original acute episode continues unless it says
+so explicitly.
+
+4. EXACERBATION AND STABILITY
+An established chronic condition and an acute exacerbation are different clinical
+statuses. For example, documentation of stable COPD does not support an acute
+COPD exacerbation. A workflow must preserve explicit statements of stability,
+improvement, resolution, or absence of an acute event.
+
+5. SOURCE-BOUND SUMMARY
+When multiple records are used, a response should name the relevant time frame.
+If status cannot be determined from retrieved text, the response should flag the
+uncertainty for human review rather than select a more specific status.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

@@ -1,0 +1,46 @@
+DOCUMENT_ID: DOC-CLIN-P002-002
+DOCUMENT_TITLE: Cardiology Post-Discharge Follow-Up
+DOCUMENT_TYPE: cardiology_follow_up
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P002
+ENCOUNTER_ID: SYN-ENC-005
+ENCOUNTER_DATE: 2031-02-18
+AUTHOR_ROLE: Cardiology Clinician
+ORGANIZATION: Synthetic Valley Heart Center
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+INTERVAL HISTORY
+SYN-P002 returns after the February hospitalization for acute on chronic systolic
+heart failure. The patient reports improved breathing, stable home weights, and
+less leg swelling. There is no current chest pain, fainting, or new need to sleep
+upright. The patient reports taking the post-discharge medications as directed.
+
+EXAMINATION
+The patient is comfortable at rest. There is trace lower-extremity edema without
+respiratory distress. The clinical assessment does not describe an ongoing acute
+heart-failure episode at this follow-up.
+
+ASSESSMENT
+1. Chronic systolic heart failure. Symptoms are improved after recent hospital
+   treatment for acute decompensation.
+2. Recent acute on chronic systolic heart-failure hospitalization, now followed
+   in the outpatient setting.
+3. Hypertension, monitored as part of cardiovascular care.
+
+PLAN
+Continue the current heart-failure regimen and daily weight monitoring. Review
+when to contact the care team for increased weight, edema, or worsening dyspnea.
+Arrange routine follow-up and laboratory monitoring as clinically indicated. This
+visit documents chronic systolic heart failure; it does not diagnose a new acute
+decompensation.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

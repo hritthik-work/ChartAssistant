@@ -1,0 +1,51 @@
+DOCUMENT_ID: DOC-CLIN-P001-003
+DOCUMENT_TITLE: Primary Care Laboratory Review
+DOCUMENT_TYPE: primary_care_lab_review
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P001
+ENCOUNTER_ID: SYN-ENC-003
+ENCOUNTER_DATE: 2031-07-21
+AUTHOR_ROLE: Primary Care Clinician
+ORGANIZATION: Synthetic Lakeside Family Practice
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+REASON FOR VISIT
+Review repeat metabolic testing ordered after a prior reduced eGFR result.
+
+INTERVAL HISTORY
+The patient feels well and denies swelling, reduced urine output, flank pain,
+visible blood in urine, nausea, or shortness of breath. Diabetes and hypertension
+medications are being taken as previously prescribed. There has been no emergency
+visit or hospitalization since the April primary-care encounter.
+
+SELECTED RESULTS
+Repeat serum creatinine is 1.14 mg/dL with eGFR reported as 58 mL/min/1.73 m2.
+Urine albumin-to-creatinine ratio is not elevated on the available test. Blood
+pressure is 128/76 mmHg at this visit. These findings are reviewed as laboratory
+observations and trend information.
+
+ASSESSMENT
+1. Type 2 diabetes mellitus without documented complication.
+2. Essential hypertension, controlled at today’s visit.
+3. Reduced eGFR on recent laboratory testing, improved slightly from the prior
+   draw. The available records do not contain an explicit diagnosis of chronic
+   kidney disease, a documented chronicity determination, or a documented
+   diabetes-and-kidney-disease relationship.
+
+PLAN
+Continue current medications. Recheck renal function with the next routine
+diabetes monitoring cycle and consider specialty consultation if the clinician
+later identifies persistent or progressive findings. The patient was advised to
+avoid nonprescribed anti-inflammatory medicines when possible and to contact the
+clinic for new urinary or volume-related symptoms.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

@@ -1,0 +1,44 @@
+DOCUMENT_ID: DOC-CLIN-P005-001
+DOCUMENT_TITLE: Hospital Discharge Summary: Ischemic Stroke
+DOCUMENT_TYPE: stroke_discharge_summary
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P005
+ENCOUNTER_ID: SYN-ENC-013
+ENCOUNTER_DATE: 2031-01-25
+AUTHOR_ROLE: Hospital Neurology Clinician
+ORGANIZATION: Synthetic Harbor Regional Hospital
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+ADMISSION AND HOSPITAL COURSE
+SYN-P005, a 67-year-old fictional patient, was admitted with acute neurologic
+symptoms and was diagnosed during this hospitalization with ischemic stroke. The
+patient received inpatient evaluation and therapy services. At discharge, the
+patient had residual left-sided weakness described as left hemiparesis.
+
+DISCHARGE STATUS
+The patient is medically stable for discharge to a rehabilitation-focused plan.
+Residual left hemiparesis is documented as a deficit following the ischemic
+stroke. No new stroke event is described after the initial inpatient diagnosis.
+
+DISCHARGE DIAGNOSES
+1. Ischemic stroke, treated during this hospitalization.
+2. Residual left hemiparesis following ischemic stroke.
+3. Hypertension, addressed in the medication and follow-up plan.
+
+PLAN
+Continue the prescribed secondary-prevention and blood-pressure regimen, attend
+rehabilitation services, and follow up with neurology and primary care. Return
+for emergency assessment for sudden new weakness, speech difficulty, severe
+headache, or other acute neurologic symptoms. The acute stroke described in this
+document is tied to the January hospitalization.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

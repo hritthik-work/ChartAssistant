@@ -1,0 +1,49 @@
+DOCUMENT_ID: DOC-CLIN-P004-001
+DOCUMENT_TITLE: Nephrology Consultation for Chronic Kidney Disease
+DOCUMENT_TYPE: nephrology_consult
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P004
+ENCOUNTER_ID: SYN-ENC-010
+ENCOUNTER_DATE: 2031-03-08
+AUTHOR_ROLE: Nephrology Clinician
+ORGANIZATION: Synthetic River Nephrology Associates
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+CONSULT REASON
+Evaluation and management of chronic kidney disease stage 3b.
+
+HISTORY
+SYN-P004 is a 69-year-old fictional patient with documented chronic kidney
+disease stage 3b and essential hypertension. The patient reports no new swelling,
+shortness of breath, gross hematuria, or urinary retention. Blood-pressure
+management is coordinated with primary care. There is no acute kidney injury
+diagnosis in this consultation.
+
+RELEVANT DATA
+Recent renal testing is reviewed in the context of the established CKD diagnosis.
+The patient has a stable chronic renal-function trend in the records available to
+this specialty clinic. Medication reconciliation is completed, with discussion
+of avoiding nonprescribed anti-inflammatory medications when possible.
+
+ASSESSMENT
+1. Chronic kidney disease stage 3b, explicitly documented and monitored.
+2. Essential hypertension, relevant to renal risk management.
+3. Medication and laboratory monitoring needs addressed as part of chronic kidney
+   disease follow-up.
+
+PLAN
+Continue renal-protective management as clinically appropriate, monitor blood
+pressure, and repeat renal laboratory studies before the next specialty visit.
+Review return precautions for swelling, marked change in urine output, or other
+new symptoms. Follow up in three months.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

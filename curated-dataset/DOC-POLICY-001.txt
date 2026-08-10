@@ -1,0 +1,42 @@
+DOCUMENT_ID: DOC-POLICY-001
+DOCUMENT_TITLE: Synthetic Payer Alpha Evidence Acceptance Policy
+DOCUMENT_TYPE: synthetic_payer_policy
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Payer Alpha
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This fictional policy illustrates source-evidence concepts for a demonstration
+dataset. It is not a real payer policy and has no operational authority.
+
+2. SOURCE ACCEPTANCE
+For this synthetic example, a record should identify the patient, encounter date,
+author role, and relevant clinical content. Acceptable source categories include
+completed progress notes, discharge summaries, and specialty documentation.
+
+3. PATIENT-SPECIFIC SUPPORT
+An asserted patient condition requires patient-specific documentation. General
+guidance, a family-history statement, a medication list, or a laboratory result
+without a documented diagnosis does not independently establish the asserted
+condition in this fictional policy.
+
+4. TRACEABILITY
+Any generated summary must preserve a citation to the clinical source. The cited
+source should contain the information claimed. A general policy can describe
+process requirements but cannot substantiate a patient diagnosis.
+
+5. LIMITATION
+This file is fictional and must not be interpreted as an actual coverage,
+payment, coding, or evidence-acceptance rule.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.
