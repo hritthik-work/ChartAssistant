@@ -1,0 +1,55 @@
+DOCUMENT_ID: DOC-CLIN-P001-001
+DOCUMENT_TITLE: Primary Care Chronic Condition Follow-Up
+DOCUMENT_TYPE: primary_care_progress_note
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P001
+ENCOUNTER_ID: SYN-ENC-001
+ENCOUNTER_DATE: 2031-04-15
+AUTHOR_ROLE: Primary Care Clinician
+ORGANIZATION: Synthetic Lakeside Family Practice
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+REASON FOR VISIT
+Routine follow-up for type 2 diabetes mellitus and essential hypertension.
+
+INTERVAL HISTORY
+SYN-P001 is a 61-year-old fictional patient returning for chronic-condition
+management. The patient reports taking metformin as prescribed and has had no
+symptomatic low blood sugar episodes. Home blood-pressure readings are generally
+in the 120s to 130s systolic. The patient denies chest pain, shortness of breath,
+leg swelling, dysuria, or visible blood in urine.
+
+CURRENT MEDICATIONS
+- Metformin 500 mg by mouth twice daily.
+- Lisinopril 10 mg by mouth once daily.
+
+SELECTED RESULTS
+Hemoglobin A1c is 7.1 percent. Serum creatinine is 1.18 mg/dL, with estimated
+glomerular filtration rate (eGFR) reported as 56 mL/min/1.73 m2 on this single
+laboratory draw. Potassium is within the laboratory reference range. No urine
+albumin result is available in the material reviewed today.
+
+ASSESSMENT
+1. Type 2 diabetes mellitus without documented complication. Glycemic control is
+   near the agreed target based on the available A1c result.
+2. Essential hypertension. Blood pressure is acceptable at this visit.
+3. Reduced eGFR on one laboratory result. This observation will be rechecked.
+   Chronic kidney disease is not diagnosed in this note, and no diabetic kidney
+   complication is documented.
+
+PLAN
+Continue metformin and lisinopril. Repeat a basic metabolic panel and obtain a
+urine albumin-to-creatinine ratio before the next visit. Encourage home blood-
+pressure tracking, balanced nutrition, and routine activity as tolerated. Return
+in three months or sooner for new symptoms.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

@@ -1,0 +1,43 @@
+DOCUMENT_ID: DOC-POLICY-004
+DOCUMENT_TITLE: Synthetic Payer Alpha Ambiguity and Escalation Policy
+DOCUMENT_TYPE: synthetic_payer_policy
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Payer Alpha
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This fictional policy describes how a demonstration workflow should handle
+ambiguous or conflicting documentation.
+
+2. INSUFFICIENT EVIDENCE
+When retrieved material does not support the requested condition or degree of
+specificity, the workflow should return insufficient evidence. It should not turn
+a symptom, laboratory result, family-history entry, or plausible inference into
+a patient diagnosis.
+
+3. CONFLICTING SOURCES
+If sources conflict, the workflow should cite the relevant documents and flag the
+matter for qualified review. A more recent note may provide useful context, but
+the system should not silently discard a clinically meaningful conflict.
+
+4. TEMPORAL AMBIGUITY
+An old hospitalization, a historical condition, and a continuing residual deficit
+must remain distinguishable. If the retrieved material does not clarify current
+status, the output should identify the gap instead of asserting an acute or
+active state.
+
+5. LIMITATION
+This document is fictional and is intended only to illustrate safe escalation
+concepts in a synthetic dataset.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

@@ -1,0 +1,43 @@
+DOCUMENT_ID: DOC-POLICY-005
+DOCUMENT_TITLE: Synthetic Payer Alpha Auditability and Source Retention Policy
+DOCUMENT_TYPE: synthetic_payer_policy
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Payer Alpha
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This fictional policy describes auditability concepts for the demonstration
+dataset. It is not a real retention, security, or payer-audit requirement.
+
+2. SOURCE TRACEABILITY
+The workflow should retain document identifiers, document versions, source
+sections or chunks, and tool-call records needed to explain an output. A citation
+must resolve to an ingested source document rather than a generated paraphrase.
+
+3. VERSION CONTROL
+Source corrections should create a new document version and update the dataset
+manifest. The system should not silently replace a source after results have been
+generated. Reviewers should be able to identify which source version supported an
+output.
+
+4. OPERATIONAL RECORDS
+For the synthetic dataset, operational records may include retrieval
+identifiers, validation status, tool result status, and errors. Production use
+would require an approved privacy, security, access-control, and retention design
+before any real data is logged or processed.
+
+5. LIMITATION
+This policy is fictional and has no authority outside the synthetic dataset
+dataset.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

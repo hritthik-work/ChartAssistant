@@ -1,0 +1,45 @@
+DOCUMENT_ID: DOC-GUIDE-004
+DOCUMENT_TITLE: Synthetic Clinical Source Attribution Guide
+DOCUMENT_TYPE: synthetic_documentation_guide
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Clinical Documentation Office
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This guide describes source-attribution expectations for a fictional retrieval
+workflow. It does not establish legal, clinical, or payer documentation rules.
+
+2. REQUIRED SOURCE ATTRIBUTES
+Each ingested source should retain a stable document identifier, document type,
+version, patient identifier when applicable, encounter date when applicable, and
+section boundaries. A generated answer should cite the document and chunk or
+section that supports each material claim.
+
+3. PATIENT ASSOCIATION
+Clinical facts must be associated with the patient identified in the document
+metadata. A condition discussed in one patient's note cannot support an answer
+about another patient. Documents without a patient identifier, including guides
+and policies, are general references rather than patient-specific evidence.
+
+4. MULTIPLE SOURCES
+When a response synthesizes multiple documents, each claim should remain
+traceable to the relevant source. The workflow should not cite an unrelated
+document merely because it contains a similar diagnosis. If records conflict,
+the conflict must be surfaced rather than hidden.
+
+5. CITATION LIMITS
+A citation proves only what its source states. A guide can explain an evidence
+boundary, but it cannot prove that a patient has a condition. Conversely, a
+clinical note can document a patient fact but cannot create a general payer rule.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

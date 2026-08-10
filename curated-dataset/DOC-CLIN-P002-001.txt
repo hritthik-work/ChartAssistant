@@ -1,0 +1,50 @@
+DOCUMENT_ID: DOC-CLIN-P002-001
+DOCUMENT_TITLE: Hospital Discharge Summary: Heart Failure Admission
+DOCUMENT_TYPE: hospital_discharge_summary
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P002
+ENCOUNTER_ID: SYN-ENC-004
+ENCOUNTER_DATE: 2031-02-03
+AUTHOR_ROLE: Hospital Medicine Clinician
+ORGANIZATION: Synthetic Valley Regional Hospital
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+ADMISSION REASON
+SYN-P002, a 74-year-old fictional patient, was admitted with worsening shortness
+of breath, orthopnea, leg swelling, and weight gain over several days.
+
+HOSPITAL COURSE
+The admission evaluation supported acute on chronic systolic heart failure. The
+patient received intravenous diuretic treatment with improvement in breathing and
+peripheral edema. Daily weights decreased during the stay, and oxygen was not
+required at discharge. There was no documented acute myocardial infarction during
+this encounter.
+
+RELEVANT HISTORY
+The chart lists chronic systolic heart failure and hypertension. The patient also
+has a history of chronic obstructive pulmonary disease (COPD); however, this
+admission was managed as heart-failure decompensation. No statement in this
+discharge summary diagnoses an acute COPD exacerbation.
+
+DISCHARGE DIAGNOSES
+1. Acute on chronic systolic heart failure, improved with inpatient treatment.
+2. Chronic obstructive pulmonary disease, historical condition noted in chart.
+3. Hypertension.
+
+DISCHARGE PLAN
+The patient will continue the discharge medication regimen, record morning
+weights, follow sodium guidance discussed by the clinical team, and attend
+cardiology follow-up. Return precautions include worsening dyspnea, rapidly
+increasing edema, chest discomfort, fainting, or inability to take medications.
+The acute heart-failure episode described here applies to this hospitalization.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

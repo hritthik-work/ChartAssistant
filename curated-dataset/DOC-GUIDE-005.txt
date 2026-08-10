@@ -1,0 +1,43 @@
+DOCUMENT_ID: DOC-GUIDE-005
+DOCUMENT_TITLE: Synthetic Human Review and Escalation Guide
+DOCUMENT_TYPE: synthetic_documentation_guide
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Clinical Documentation Office
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This synthetic guide identifies situations in which an automated workflow should
+route output to a qualified human reviewer instead of making a definitive claim.
+
+2. ESCALATE FOR MISSING SUPPORT
+Escalate when available documents do not establish the requested diagnosis,
+status, complication, linkage, severity, or laterality. A low-confidence response
+or insufficient-evidence result is safer than a plausible unsupported answer.
+
+3. ESCALATE FOR CONFLICT
+Escalate when two source documents conflict about active status, diagnosis,
+patient association, or relevant chronology. The workflow may summarize the
+conflict with citations, but it must not silently decide which source is correct.
+
+4. ESCALATE FOR CONSEQUENTIAL USE
+Qualified clinical or coding review is required before any generated output can
+affect a patient chart, diagnosis list, billing action, risk-adjustment filing,
+or payer submission. A source-grounded system may assist review; it is not an
+autonomous decision maker.
+
+5. RECORD THE LIMITATION
+The response should preserve a review status, missing-information statement, and
+source citations. Operational logs should record failures such as unavailable
+tools or invalid structured output without exposing real patient information.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

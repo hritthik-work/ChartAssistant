@@ -1,0 +1,47 @@
+DOCUMENT_ID: DOC-CLIN-P002-003
+DOCUMENT_TITLE: Pulmonology COPD Follow-Up
+DOCUMENT_TYPE: pulmonology_progress_note
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P002
+ENCOUNTER_ID: SYN-ENC-006
+ENCOUNTER_DATE: 2031-04-04
+AUTHOR_ROLE: Pulmonology Clinician
+ORGANIZATION: Synthetic Valley Pulmonary Clinic
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+RESPIRATORY HISTORY
+SYN-P002 is followed for established chronic obstructive pulmonary disease. The
+patient reports baseline exertional breathlessness without increased cough, fever,
+change in sputum, wheeze, or rescue-inhaler use. There has been no respiratory
+emergency visit since the cardiology follow-up.
+
+CURRENT TREATMENT
+The patient uses the maintenance inhaler listed in the medication record and has
+a rescue inhaler available. Inhaler technique was reviewed during this visit.
+
+EXAMINATION
+Breathing is nonlabored at rest. Breath sounds are mildly diminished but without
+new focal finding. Oxygen saturation is acceptable on room air in the clinic.
+
+ASSESSMENT
+1. Chronic obstructive pulmonary disease, stable.
+2. No acute COPD exacerbation is documented at this visit.
+3. Chronic systolic heart failure is noted as a separate condition managed by
+   cardiology; no heart-failure treatment change is made in this pulmonary note.
+
+PLAN
+Continue the current COPD maintenance regimen and avoid known inhaled irritants.
+Seek assessment for increased sputum, worsening wheeze, fever, or a meaningful
+change from baseline shortness of breath. Follow up in six months or earlier for
+new respiratory symptoms.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

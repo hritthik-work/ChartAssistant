@@ -1,0 +1,48 @@
+DOCUMENT_ID: DOC-GUIDE-001
+DOCUMENT_TITLE: Synthetic Clinical Documentation Evidence Guide
+DOCUMENT_TYPE: synthetic_documentation_guide
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+DOCUMENT_OWNER: Synthetic Clinical Documentation Office
+EFFECTIVE_DATE: 2031-01-01
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+1. PURPOSE
+This synthetic guide describes how a software workflow should distinguish chart
+evidence types. It is not an official coding manual and does not replace
+qualified clinical or coding judgment.
+
+2. CONFIRMED DIAGNOSES
+A condition may be treated as documented only when a qualified source explicitly
+states the diagnosis for the patient or otherwise clearly establishes it in the
+assessment. The workflow should retain the source document, section, and wording
+that supports the conclusion.
+
+3. NON-DIAGNOSTIC INFORMATION
+Symptoms, medication lists, laboratory results, imaging observations, and
+problem-oriented discussions can provide context. They do not by themselves
+establish an unstated diagnosis in this synthetic dataset. A reduced laboratory
+value is not equivalent to a chronic disease diagnosis. A medication does not
+prove the indication for which it was prescribed.
+
+4. FAMILY HISTORY, NEGATION, AND UNCERTAINTY
+Family history belongs to a relative unless the source separately diagnoses the
+patient. Statements such as "no COPD," "denies diabetes," or "not present" must
+remain connected to their negation. Terms such as "possible," "rule out," or
+"under evaluation" should not be converted to confirmed disease.
+
+5. SOURCE-BOUND OUTPUT
+A generated response should say that evidence is insufficient when the retrieved
+sources do not support the requested fact. It must not fill a gap with general
+medical knowledge. A code lookup reference can display an entry, but it cannot
+create evidence that the condition applies to the patient.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.

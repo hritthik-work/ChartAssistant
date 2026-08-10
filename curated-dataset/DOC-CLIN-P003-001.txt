@@ -1,0 +1,50 @@
+DOCUMENT_ID: DOC-CLIN-P003-001
+DOCUMENT_TITLE: Annual Wellness and Hypertension Visit
+DOCUMENT_TYPE: annual_wellness_note
+DATA_CLASSIFICATION: SYNTHETIC
+DOCUMENT_VERSION: 1.0.0
+PATIENT_ID: SYN-P003
+ENCOUNTER_ID: SYN-ENC-007
+ENCOUNTER_DATE: 2031-01-12
+AUTHOR_ROLE: Primary Care Clinician
+ORGANIZATION: Synthetic Meadow Family Health
+
+SYNTHETIC MOCK DOCUMENT
+This document contains fictional, synthetically created data. It is
+not intended for clinical care, coding, billing, legal interpretation, or payer
+submission.
+
+REASON FOR VISIT
+Annual wellness review and follow-up of essential hypertension.
+
+MEDICAL HISTORY
+SYN-P003 is a 58-year-old fictional patient with essential hypertension. The
+patient takes amlodipine and reports no medication concerns. There is no personal
+history of diabetes documented in this note. There is no diagnosis of COPD, and
+the patient denies chronic cough, wheeze, or prior COPD treatment.
+
+FAMILY HISTORY
+The patient’s mother has type 2 diabetes mellitus. This family-history statement
+does not describe a diabetes diagnosis for SYN-P003.
+
+REVIEW AND EXAMINATION
+The patient denies chest pain, dyspnea, lower-extremity swelling, and urinary
+symptoms. Blood pressure is reviewed as part of hypertension care. Mild chronic
+right-knee discomfort is mentioned; a separate orthopedic visit is planned if it
+persists.
+
+ASSESSMENT
+1. Essential hypertension.
+2. Family history of type 2 diabetes mellitus.
+3. No COPD diagnosis is documented. No personal diabetes diagnosis is documented.
+
+PLAN
+Continue amlodipine and routine blood-pressure monitoring. Discuss general health
+maintenance and schedule follow-up for persistent knee symptoms. The patient will
+return sooner for new cardiopulmonary or other concerning symptoms.
+
+
+CURATION REVIEW NOTES
+This document has been expanded for synthetic data testing. The added text does not introduce new clinical facts, diagnoses, treatments, dates, or patient relationships. It keeps the original information as the source of truth. Information in the title, metadata, history, results, assessment, plan, and any numbered sections should be read together. A reader should not infer details that are not written in the document. Symptoms, test results, medicines, family history, denied conditions, past events, and conditions still being checked are not the same as a confirmed diagnosis unless the document says so clearly.
+
+The document ID is stable and can be used to identify this file during review. The patient and encounter identifiers, when present, belong only to this document's synthetic record. Names of people, places, organizations, and dates are fictional. The document may include a confirmed condition, a past condition, a current concern, or a finding that needs follow-up. Each statement should keep its original meaning and timing. This added section is for length and document-handling checks only. It must not be used as support for a patient fact, a coding decision, a payment decision, or a clinical decision. The existing sections remain the only place to find document-specific information. It adds no new evidence.
