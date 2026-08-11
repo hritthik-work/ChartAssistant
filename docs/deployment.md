@@ -1,7 +1,7 @@
 # Release and Vercel deployment guide
 
-Chart Assistant uses semantic application versions. The first public release is `1.0.0`, and its
-Git tag is `v1.0.0`. The application version has one source of truth in `backend/__init__.py` and is
+Chart Assistant uses semantic application versions. The current release is `1.0.1`, and its Git tag
+is `v1.0.1`. The application version has one source of truth in `backend/__init__.py` and is
 also exposed by the FastAPI schema, `/health`, and answer traces.
 
 Other version labels have their own meaning and should not be kept in sync with the app release:
@@ -17,7 +17,7 @@ Other version labels have their own meaning and should not be kept in sync with 
 flowchart LR
     Branch["v1 branch"] --> PR["Pull request and Quality checks"]
     PR --> Main["Merge to main"]
-    Main --> Tag["Annotated v1.0.0 tag"]
+    Main --> Tag["Annotated v1.0.1 tag"]
     Tag --> Verify["Version match, lint, tests, evals, wheel"]
     Verify --> Deploy["Vercel production deployment"]
     Deploy --> Smoke["Health smoke test"]
@@ -26,7 +26,7 @@ flowchart LR
 
 - **Quality** runs once for pull requests and again for changes merged into `main`.
 - **Preview on Vercel** is manual and deploys the selected branch to the `preview` environment.
-- **Release to Vercel** runs only for tags shaped like `v1.0.0`. It refuses to deploy when the tag
+- **Release to Vercel** runs only for tags shaped like `v1.0.1`. It refuses to deploy when the tag
   and the version in the code do not match or the tagged commit is not already on `main`.
 
 ## One-time setup
@@ -44,24 +44,24 @@ Open **Actions → Preview on Vercel → Run workflow** and select the branch. T
 verification suite, deploys one prebuilt artifact, checks the app and its live Azure dependencies,
 and writes the URL to the job summary.
 
-## Publish v1.0.0
+## Publish v1.0.1
 
 Merge the pull request first. Then create the release tag from the updated `main` branch:
 
 ```bash
 git switch main
 git pull --ff-only
-git tag -a v1.0.0 -m "Chart Assistant v1.0.0"
-git push origin v1.0.0
+git tag -a v1.0.1 -m "Chart Assistant v1.0.1"
+git push origin v1.0.1
 ```
 
-The tag starts the production workflow. It validates that `v1.0.0` matches application version
-`1.0.0`, confirms the commit is on `main`, repeats all checks, deploys to Vercel, verifies the app
+The tag starts the production workflow. It validates that `v1.0.1` matches application version
+`1.0.1`, confirms the commit is on `main`, repeats all checks, deploys to Vercel, verifies the app
 and its live Azure dependencies, and creates the GitHub Release with generated notes. Do not create
 the tag before the pull request is merged.
 
 For the next release, update `backend/__init__.py` and `CHANGELOG.md` in the release pull request,
-then use the matching tag such as `v1.0.1` or `v1.1.0`.
+then use the matching tag such as `v1.0.2` or `v1.1.0`.
 
 ## Rollback
 
