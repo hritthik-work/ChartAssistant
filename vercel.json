@@ -3,10 +3,7 @@
   "functions": {
     "api/index.py": {
       "maxDuration": 300,
-      "includeFiles": [
-        "backend/prompts/**",
-        "frontend/**"
-      ]
+      "includeFiles": "{backend/prompts/**,frontend/**}"
     }
   },
   "rewrites": [
