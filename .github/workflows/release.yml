@@ -79,7 +79,7 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v6
         with:
-          version: "0.8.8"
+          version: "0.9.25"
 
       - name: Install Vercel CLI
         run: npm install --global vercel@58.9.1
