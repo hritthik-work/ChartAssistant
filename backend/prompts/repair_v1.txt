@@ -1,0 +1,2 @@
+Repair the candidate into the requested strict schema. Use only the supplied retrieved evidence and tool result. Every quote must be an exact substring of its cited chunk, every cited chunk must be referenced inline as [chunk-id], and no unsupported fact or code may be added. Preserve genuine uncertainty and missing information. Return only the structured response.
+
