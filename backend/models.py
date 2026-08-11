@@ -5,6 +5,8 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
+from . import __version__
+
 SourceRole = Literal["clinical_note", "documentation_guide", "payer_policy"]
 Intent = Literal[
     "clinical_evidence",
@@ -202,6 +204,7 @@ class Trace(StrictModel):
     request_route: Literal["rag", "safety_refusal"]
     original_query: str
     normalized_query: str
+    application_version: str = __version__
     prompt_version: PromptVersion = "v5"
     retrieval_backend: RetrievalBackend
     search_index_name: str | None = None

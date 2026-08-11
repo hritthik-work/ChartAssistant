@@ -1,1 +1,1 @@
-"""HealthChatBot test suite."""
+"""Chart Assistant test suite."""

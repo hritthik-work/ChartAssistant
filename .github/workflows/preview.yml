@@ -1,0 +1,87 @@
+name: Preview on Vercel
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    environment: preview
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+    steps:
+      - name: Check out selected branch
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install and verify project
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+          python -m ruff check .
+          python -m pytest -q
+          python -m evals.run_evals
+          python -m pip wheel . --no-deps --wheel-dir /tmp/chart-assistant-wheel
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@58.9.1
+
+      - name: Check deployment credentials
+        shell: bash
+        run: |
+          test -n "$VERCEL_TOKEN" || { echo "Missing VERCEL_TOKEN"; exit 1; }
+          test -n "$VERCEL_ORG_ID" || { echo "Missing VERCEL_ORG_ID"; exit 1; }
+          test -n "$VERCEL_PROJECT_ID" || { echo "Missing VERCEL_PROJECT_ID"; exit 1; }
+
+      - name: Pull Vercel preview environment
+        run: vercel pull --yes --environment=preview --token="$VERCEL_TOKEN"
+
+      - name: Build preview deployment
+        run: vercel build --token="$VERCEL_TOKEN"
+
+      - name: Deploy prebuilt application
+        id: deploy
+        shell: bash
+        run: |
+          deployment_url=$(vercel deploy --prebuilt --token="$VERCEL_TOKEN")
+          echo "url=$deployment_url" >> "$GITHUB_OUTPUT"
+
+      - name: Smoke test application
+        run: |
+          curl --fail --silent --show-error \
+            --retry 6 --retry-all-errors --retry-delay 5 \
+            "${{ steps.deploy.outputs.url }}/health" > /dev/null
+
+      - name: Verify live dependencies
+        shell: bash
+        run: |
+          curl --fail --silent --show-error \
+            --retry 3 --retry-all-errors --retry-delay 5 \
+            "${{ steps.deploy.outputs.url }}/health/services?deep=true" \
+            | python -c 'import json, sys; result = json.load(sys.stdin); print(json.dumps(result, indent=2)); sys.exit(0 if result.get("status") == "ok" else 1)'
+
+      - name: Publish preview summary
+        run: |
+          echo "## Vercel preview" >> "$GITHUB_STEP_SUMMARY"
+          echo "${{ steps.deploy.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"

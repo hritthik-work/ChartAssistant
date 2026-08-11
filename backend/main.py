@@ -11,6 +11,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 
+from . import __version__
 from .api.routes import documents, health, ingestion, query
 from .core.config import ROOT, Settings, get_settings
 from .core.diagnostics import bind_request_id, configure_logging, log_event, reset_request_id
@@ -79,6 +80,7 @@ def create_app(
             logging.INFO,
             "application.startup",
             app_name=settings.app_name,
+            application_version=__version__,
             chat_configured=settings.chat_ready,
             embeddings_configured=settings.embeddings_ready,
             search_query_configured=settings.search_query_ready,
@@ -96,7 +98,7 @@ def create_app(
 
     app = FastAPI(
         title=settings.app_name,
-        version="0.1.0",
+        version=__version__,
         description=(
             "Question answering over synthetic patient charts using retrieval-augmented "
             "generation and Microsoft Agent Framework. Demonstration only."

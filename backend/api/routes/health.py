@@ -5,6 +5,7 @@ from typing import Any
 
 from fastapi import APIRouter, Depends, Query
 
+from ... import __version__
 from ...core.config import Settings
 from ...services.health import (
     check_chat,
@@ -32,6 +33,7 @@ async def health(
     return {
         "status": "ok",
         "application": settings.app_name,
+        "application_version": __version__,
         "prompt_version": settings.system_prompt_version,
         "synthetic_only": True,
         "model_configured": settings.chat_ready,

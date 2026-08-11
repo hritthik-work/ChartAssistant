@@ -1,1 +1,3 @@
-"""HealthChatBot evidence-first RAG service."""
+"""Chart Assistant backend."""
+
+__version__ = "1.0.0"

@@ -16,8 +16,10 @@ def test_health_documents_and_static_ui(settings, artifacts):
         index = client.get("/")
         favicon = client.get("/favicon.ico")
     assert health.status_code == 200
+    assert health.json()["application_version"] == "1.0.0"
     assert health.json()["synthetic_only"] is True
     assert health.json()["prompt_version"] == "v5"
+    assert app.version == "1.0.0"
     assert documents.json() == []
     assert index.status_code == 200
     assert "Chart Assistant" in index.text

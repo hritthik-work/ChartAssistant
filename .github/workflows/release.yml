@@ -1,37 +1,32 @@
 name: Release to Vercel
 
 on:
-  workflow_dispatch:
-    inputs:
-      target:
-        description: Deployment environment
-        required: true
-        default: preview
-        type: choice
-        options:
-          - preview
-          - production
+  push:
+    tags:
+      - "v*.*.*"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
-  group: vercel-${{ inputs.target }}
+  group: production-release
   cancel-in-progress: false
 
 jobs:
   release:
     runs-on: ubuntu-latest
     timeout-minutes: 25
-    environment: ${{ inputs.target }}
+    environment: production
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
       VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     steps:
-      - name: Check out repository
+      - name: Check out release tag
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -39,13 +34,42 @@ jobs:
           python-version: "3.12"
           cache: pip
 
-      - name: Install and verify project
+      - name: Install project
         run: |
           python -m pip install --upgrade pip
           python -m pip install -e ".[dev]"
+
+      - name: Validate release version
+        id: version
+        shell: bash
+        run: |
+          if [[ ! "$GITHUB_REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "Tag $GITHUB_REF_NAME is not a valid semantic release tag."
+            exit 1
+          fi
+          application_version=$(python -c 'from backend import __version__; print(__version__)')
+          tag_version="${GITHUB_REF_NAME#v}"
+          if [[ "$tag_version" != "$application_version" ]]; then
+            echo "Tag $GITHUB_REF_NAME does not match application version $application_version."
+            exit 1
+          fi
+          echo "version=$application_version" >> "$GITHUB_OUTPUT"
+
+      - name: Confirm release is on main
+        shell: bash
+        run: |
+          git fetch origin main
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
+            echo "Release tag must point to a commit already merged into main."
+            exit 1
+          fi
+
+      - name: Verify release
+        run: |
           python -m ruff check .
           python -m pytest -q
           python -m evals.run_evals
+          python -m pip wheel . --no-deps --wheel-dir /tmp/chart-assistant-wheel
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -62,30 +86,46 @@ jobs:
           test -n "$VERCEL_ORG_ID" || { echo "Missing VERCEL_ORG_ID"; exit 1; }
           test -n "$VERCEL_PROJECT_ID" || { echo "Missing VERCEL_PROJECT_ID"; exit 1; }
 
-      - name: Pull Vercel environment
-        run: vercel pull --yes --environment="${{ inputs.target }}" --token="$VERCEL_TOKEN"
+      - name: Pull Vercel production environment
+        run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
 
-      - name: Build deployment
-        shell: bash
-        run: |
-          if [[ "${{ inputs.target }}" == "production" ]]; then
-            vercel build --prod --token="$VERCEL_TOKEN"
-          else
-            vercel build --token="$VERCEL_TOKEN"
-          fi
+      - name: Build production deployment
+        run: vercel build --prod --token="$VERCEL_TOKEN"
 
       - name: Deploy prebuilt application
         id: deploy
         shell: bash
         run: |
-          if [[ "${{ inputs.target }}" == "production" ]]; then
-            deployment_url=$(vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN")
-          else
-            deployment_url=$(vercel deploy --prebuilt --token="$VERCEL_TOKEN")
-          fi
+          deployment_url=$(vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN")
           echo "url=$deployment_url" >> "$GITHUB_OUTPUT"
 
-      - name: Publish deployment summary
+      - name: Smoke test application
         run: |
-          echo "## Vercel ${{ inputs.target }} release" >> "$GITHUB_STEP_SUMMARY"
+          curl --fail --silent --show-error \
+            --retry 6 --retry-all-errors --retry-delay 5 \
+            "${{ steps.deploy.outputs.url }}/health" > /dev/null
+
+      - name: Verify live dependencies
+        shell: bash
+        run: |
+          curl --fail --silent --show-error \
+            --retry 3 --retry-all-errors --retry-delay 5 \
+            "${{ steps.deploy.outputs.url }}/health/services?deep=true" \
+            | python -c 'import json, sys; result = json.load(sys.stdin); print(json.dumps(result, indent=2)); sys.exit(0 if result.get("status") == "ok" else 1)'
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if ! gh release view "$GITHUB_REF_NAME" > /dev/null 2>&1; then
+            gh release create "$GITHUB_REF_NAME" \
+              --verify-tag \
+              --generate-notes \
+              --title "Chart Assistant $GITHUB_REF_NAME"
+          fi
+
+      - name: Publish release summary
+        run: |
+          echo "## Chart Assistant v${{ steps.version.outputs.version }}" >> "$GITHUB_STEP_SUMMARY"
           echo "${{ steps.deploy.outputs.url }}" >> "$GITHUB_STEP_SUMMARY"

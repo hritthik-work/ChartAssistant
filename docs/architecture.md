@@ -179,6 +179,6 @@ private networking, monitored evaluation, and clinical/compliance approval.
 - [User flow](flows/user-flow.md)
 - [Ingestion flow](flows/ingestion-flow.md)
 - [RAG flow](flows/rag-flow.md)
-- [Prompting strategy](strategies/prompting.md)
-- [Chunking strategy](strategies/chunking.md)
+- [Prompting strategy](strategies/prompting.txt)
+- [Chunking strategy](strategies/chunking.txt)
 - [Release guide](deployment.md)

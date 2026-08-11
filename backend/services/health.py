@@ -76,7 +76,7 @@ async def check_embeddings(settings: Settings, *, deep: bool = False) -> dict[st
     started = time.perf_counter()
     try:
         service = AzureEmbeddingService(settings)
-        vectors, tokens = await service.embed(["HealthChatBot health probe"])
+        vectors, tokens = await service.embed(["Chart Assistant health probe"])
         if len(vectors) != 1 or not vectors[0]:
             raise RuntimeError("empty response")
         return {

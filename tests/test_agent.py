@@ -147,6 +147,7 @@ async def test_pipeline_runs_retrieval_and_grounding(settings, curated_corpus):
     response = await pipeline.run("What kidney condition is documented for patient 4?")
     assert response.status == "answered"
     assert response.trace.normalized_query.endswith("SYN-P004?")
+    assert response.trace.application_version == "1.0.0"
     assert response.trace.tool_calls == 1
     assert response.trace.prompt_version == "v5"
     assert response.confidence == "high"

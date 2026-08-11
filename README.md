@@ -4,12 +4,15 @@ Chart Assistant is an end-to-end RAG application for asking natural-language que
 synthetic patient charts. It resolves the patient mentioned in a question, retrieves only allowed
 chart sections, and returns a structured answer with exact source quotes.
 
+**Current application release: v1.0.0**
+
 This repository was built for the RAAPID Applied AI Engineer take-home assignment. It demonstrates
 ingestion, hybrid retrieval, tool calling, schema-enforced output, grounding checks, evaluation, and
 failure handling. It uses synthetic data only and is not intended for clinical, coding, billing, or
 coverage decisions.
 
 [Architecture](docs/architecture.md) · [Demo guide](docs/demo-script.md) ·
+[Changelog](CHANGELOG.md) ·
 [Task 1 note](submission-files/task1.txt) · [Task 2 answers](submission-files/task2.txt)
 
 ## Highlights
@@ -173,7 +176,7 @@ trace remain available under **Answer details**.
 - **Human review:** every response keeps `human_review_required=true`.
 
 The final system prompt is [v5](backend/prompts/system_v5.txt). The full zero-shot to structured
-prompt progression is explained in the [prompting strategy](docs/strategies/prompting.md).
+prompt progression is explained in the [prompting strategy](docs/strategies/prompting.txt).
 
 ## Verification
 
@@ -207,9 +210,10 @@ api/index.py              thin Vercel ASGI adapter
 
 ## Deployment and limitations
 
-GitHub Actions validates every push and pull request. A separate manual workflow creates Vercel
-preview or production releases after the same quality checks. Setup and rollback instructions are in
-the [Vercel release guide](docs/deployment.md).
+GitHub Actions validates pull requests and changes merged into `main`. Preview deployments are
+manual, while a tag such as `v1.0.0` creates the matching production deployment and GitHub Release.
+Setup, versioning, release, and rollback instructions are in the
+[Vercel release guide](docs/deployment.md).
 
 This remains a take-home demonstration, not a PHI-ready product. Scanned PDFs require OCR, access
 control and audit storage are not implemented, and the in-memory ingestion-job registry is not
