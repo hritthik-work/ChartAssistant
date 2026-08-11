@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -30,6 +31,7 @@ class Settings(BaseSettings):
 
     app_name: str = "Chart Assistant"
     log_level: str = "INFO"
+    system_prompt_version: Literal["v1", "v2", "v3", "v4", "v5"] = "v5"
     prompt_dir: Path = ROOT / "backend" / "prompts"
     artifact_dir: Path = ROOT / ".artifacts" / "ingestion"
 

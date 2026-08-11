@@ -17,6 +17,7 @@ Intent = Literal[
 ]
 AnswerStatus = Literal["answered", "partial", "refused"]
 RetrievalBackend = Literal["not_run", "azure_ai_search", "in_memory_hybrid", "local_bm25"]
+PromptVersion = Literal["v1", "v2", "v3", "v4", "v5"]
 
 
 class StrictModel(BaseModel):
@@ -201,7 +202,7 @@ class Trace(StrictModel):
     request_route: Literal["rag", "safety_refusal"]
     original_query: str
     normalized_query: str
-    prompt_version: Literal["v2"] = "v2"
+    prompt_version: PromptVersion = "v5"
     retrieval_backend: RetrievalBackend
     search_index_name: str | None = None
     retrieval_candidate_count: int = 0

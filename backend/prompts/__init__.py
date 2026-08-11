@@ -1,1 +1,1 @@
-"""Versioned prompt artifacts packaged with HealthChatBot."""
+"""Versioned prompt artifacts packaged with Chart Assistant."""

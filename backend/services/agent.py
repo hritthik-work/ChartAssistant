@@ -16,6 +16,7 @@ from ..core.diagnostics import log_event
 from ..core.errors import AppError, ConfigurationAppError
 from ..models import (
     ModelCandidate,
+    PromptVersion,
     QueryResponse,
     RetrievalResult,
     RetrievedChunk,
@@ -97,7 +98,10 @@ class MafAgentProvider:
             api_key=str(settings.azure_openai_api_key),
             api_version=settings.azure_openai_api_version,
         )
-        self.system_prompt = (settings.prompt_dir / "system_v2.txt").read_text(encoding="utf-8")
+        self.prompt_version = settings.system_prompt_version
+        self.system_prompt = (settings.prompt_dir / f"system_{self.prompt_version}.txt").read_text(
+            encoding="utf-8"
+        )
         self.repair_prompt = (settings.prompt_dir / "repair_v1.txt").read_text(encoding="utf-8")
 
     async def generate(self, query: str, retrieve_tool: Any, lookup_tool: Any) -> AgentTurn:
@@ -107,6 +111,7 @@ class MafAgentProvider:
             logging.INFO,
             "maf.generate.started",
             deployment=self.deployment,
+            prompt_version=self.prompt_version,
             query_length=len(query),
             tool_count=2,
         )
@@ -236,10 +241,12 @@ class GroundedPipeline:
         retrieval: RetrievalService,
         provider: AgentProvider | None,
         prompt_dir: Path,
+        prompt_version: PromptVersion = "v5",
     ) -> None:
         self.retrieval = retrieval
         self.provider = provider
         self.prompt_dir = prompt_dir
+        self.prompt_version = prompt_version
 
     async def run(self, query: str) -> QueryResponse:
         started = time.perf_counter()
@@ -558,8 +565,8 @@ class GroundedPipeline:
             }
         )
 
-    @staticmethod
     def _trace(
+        self,
         retrieval: RetrievalResult,
         *,
         original_query: str,
@@ -577,6 +584,7 @@ class GroundedPipeline:
             request_route=route,
             original_query=original_query,
             normalized_query=normalized_query,
+            prompt_version=self.prompt_version,
             retrieval_backend=retrieval.backend,
             search_index_name=retrieval.search_index_name,
             retrieval_candidate_count=retrieval.candidate_count,

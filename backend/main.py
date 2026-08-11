@@ -64,7 +64,12 @@ def create_app(
 
     ingestion_service = IngestionService(settings, embeddings, search_admin, artifacts)
     retrieval = RetrievalService(settings, artifacts, embeddings, search_query)
-    pipeline = GroundedPipeline(retrieval, provider, settings.prompt_dir)
+    pipeline = GroundedPipeline(
+        retrieval,
+        provider,
+        settings.prompt_dir,
+        prompt_version=settings.system_prompt_version,
+    )
     jobs = IngestionJobStore()
 
     @asynccontextmanager
@@ -79,6 +84,7 @@ def create_app(
             search_query_configured=settings.search_query_ready,
             search_admin_configured=settings.search_admin_ready,
             search_index=settings.azure_search_index_name,
+            prompt_version=settings.system_prompt_version,
             artifact_dir=str(settings.artifact_dir),
         )
         retrieval.refresh()

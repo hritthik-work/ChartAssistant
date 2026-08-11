@@ -32,6 +32,7 @@ async def health(
     return {
         "status": "ok",
         "application": settings.app_name,
+        "prompt_version": settings.system_prompt_version,
         "synthetic_only": True,
         "model_configured": settings.chat_ready,
         "embeddings_configured": settings.embeddings_ready,
