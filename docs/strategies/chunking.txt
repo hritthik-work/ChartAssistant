@@ -1,0 +1,29 @@
+CHUNKING STRATEGY - QUICK DEV LOG
+
+At first I thought I could split every file after a fixed number of characters. That was simple, but
+it could separate a condition from its heading, date, or status. In a patient chart, that small bit
+of context matters a lot.
+
+I then tried smaller and larger chunks while checking the sample questions. Very small chunks were
+good for exact matches, but they often lost the full meaning of a section. Bigger chunks kept more
+context, but they also brought in extra text and made the citations less focused.
+
+The middle ground that worked best for this dataset was:
+
+- target size: 180 tokens
+- maximum size: 240 tokens
+- overlap: 30 tokens
+- total context budget: 900 tokens
+- chunk ID: <document-id>-chunk-<order>
+
+I split by document section first, not only by size. This keeps headings such as ACTIVE CONDITIONS,
+FAMILY HISTORY, or MEDICATIONS attached to the right text. If a section is too long, it is split at
+sentence boundaries. The 30-token overlap keeps the next chunk from starting with no context.
+
+I also add the title, section name, and source type to the embedding input. The original chart text
+is still kept as it is, which is useful when the app needs to show an exact quote.
+
+These numbers are not meant to be perfect for every medical document. They are a practical middle
+ground for the short synthetic charts in this project. If this had thousands of long charts, I would
+test the sizes again on real evaluation questions and add document-level filtering before searching
+individual chunks.

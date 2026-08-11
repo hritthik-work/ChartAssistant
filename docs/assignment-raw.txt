@@ -1,0 +1,153 @@
+APPLIED AI ENGINEER — TAKE-HOME ASSIGNMENT
+
+Prepared for candidates interviewing with RAAPID
+
+RAAPID is a healthcare technology company focused on AI-enabled risk-adjustment
+solutions for payers, providers, and healthcare support organizations.
+
+The Applied AI Engineer is a hands-on engineering role responsible for building and
+hardening the LLM-powered components that sit underneath RAAPID's Agentic AI Center
+of Excellence. This role does not design strategy—it ships grounded, reliable,
+production-minded GenAI systems: retrieval pipelines, structured-output services,
+tool-calling agents, and the evaluation and guardrail layers that keep them trustworthy
+in a healthcare context.
+
+This assignment is designed to verify both your basic GenAI engineering skills
+(prompting, parsing, and API usage) and your fundamental understanding of how these
+systems fail and how to engineer around those failures (grounding, evaluation, cost,
+latency, and safety).
+
+
+TASK 1: BUILD A GROUNDED GENAI MICRO-SERVICE
+
+Scenario
+
+RAAPID processes large volumes of unstructured clinical and policy documents (chart
+notes, coding guidelines, and payer policy excerpts) that need to be queried reliably—
+without the system inventing facts that were never in the source material.
+
+Your task
+
+Build a functioning micro-service or script (an API endpoint, CLI, or notebook is fine)
+that:
+
+1. Ingests a small corpus of mock unstructured documents (5–10 short clinical-note-style
+   or policy-style documents that you create).
+2. Accepts a natural-language query and retrieves only the relevant chunks. A simple
+   in-memory vector store or embedding similarity is sufficient; there is no need for a
+   hosted vector database.
+3. Answers strictly from the retrieved context, with inline source/citation references
+   back to the originating chunk.
+4. Calls at least one external tool or function (for example, a mock ICD-10 lookup, a
+   mock eligibility-check API, or a calculator) as part of producing the answer.
+5. Returns a schema-enforced JSON object (not free text) as the final output, validated
+   against a defined schema.
+
+What we expect
+
+We are not looking for a single prompt-and-print script. A strong submission should
+demonstrate most of the following:
+
+- Grounding: Retrieval is demonstrably restricted to the ingested corpus; the model
+  does not answer from parametric knowledge alone.
+- Chunking strategy: A deliberate approach to splitting documents, with reasoning for
+  chunk size and overlap, including a plan for documents that exceed context-window
+  limits.
+- Structured output: An enforced JSON schema with validation and at least one
+  retry/repair path when the model's output fails to parse or validate.
+- Tool/function calling: A real function call wired into the reasoning loop, not just
+  described in a prompt.
+- Prompt design artifacts: At least one iteration of your system prompt (v1 → v2),
+  with an explanation of what you changed and why.
+- Error handling: Explicit handling for at least two failure modes (for example, empty
+  retrieval, tool timeout, malformed JSON, or rate limiting).
+- Evaluation: A small evaluation set (5–10 test queries) with expected answers or
+  expected citations, plus a pass/fail or scored result that you can show us running.
+
+Guardrails
+
+- Show how the service refuses or flags an answer when it is not supported by retrieved
+  context, rather than guessing.
+- Include a confidence or missing-information signal in the JSON output that a human
+  reviewer can act on.
+- Note explicitly where a human would stay in the loop before this touches a real
+  patient chart or payer submission, and explain why.
+- Note any handling required for PHI/PII if this were pointed at real clinical data,
+  even though you are using mock data here.
+
+Requirements
+
+- Use mock or synthetic documents and queries created by you—no real PHI.
+- Include your prompt versions and a short explanation of your reasoning/agent logic.
+- Demonstrate at least one live, end-to-end run, including a case that triggers your
+  refusal or low-confidence path.
+- Briefly note token cost, latency, and how this would scale if run against thousands
+  of documents per day.
+
+Deliverables
+
+- A 5–10 minute walkthrough video or live demo.
+- The code/repository (or exported notebook).
+- A short note (1–2 pages) covering architecture, prompt/reasoning design, grounding
+  and guardrail approach, evaluation results, known limitations, and how you would
+  productionize this inside RAAPID.
+
+
+TASK 2: REASONING ABOUT GENAI SYSTEMS
+
+Scenario
+
+Beyond building something that works once, we want to see how you reason about GenAI
+systems when they break, get expensive, or get scrutinized by a healthcare compliance
+team.
+
+Your task
+
+Answer the following in writing. A few sentences to a short paragraph each is
+sufficient; depth of reasoning matters more than length.
+
+- Debug it: Take a small piece of your own Task 1 prompt-parsing logic (or write a
+  short illustrative example if you prefer) and walk through one way it could fail in
+  production—a malformed response, an unexpected field, or a partial JSON payload.
+  Explain how you would detect and fix it, both the immediate bug and the underlying
+  design flaw that allowed it.
+
+- RAG vs. long-context vs. fine-tuning: For RAAPID's HCC risk-adjustment coding use
+  case, when would you choose each approach, and what would change your
+  recommendation as data volume or accuracy requirements shift?
+
+- Cost and latency estimate: Given a stated workflow (for example, 50,000 chart
+  summaries per month, approximately 2,000 tokens of context each, one LLM call plus
+  one tool call per document), estimate rough monthly token cost and latency at a
+  stated model tier, and identify the single highest-leverage change to reduce cost
+  without materially hurting accuracy.
+
+- Failure-mode audit: Describe the agent/workflow architecture you built for Task 1
+  (or sketch a simple one if you would rather keep this independent of Task 1).
+  Identify three realistic failure modes and the specific engineering control you
+  would add for each (retry, schema validation, human checkpoint, rate limiting, etc.).
+
+- Evaluation approach: How would you evaluate correctness and hallucination rate for a
+  GenAI system generating suggested HCC codes, given that “correct” often requires
+  clinical judgment rather than an exact-match answer key?
+
+- Deployment call: If you had to deploy your Task 1 build so RAAPID's team could
+  actually use it tomorrow, how would you deploy it (hosting, access control,
+  monitoring/logging, and rollback plan)? Is deploying it as-is a good idea at this
+  stage, or what would you want in place first before real users or real data touch it?
+
+Deliverables
+
+- Written answers (1–2 pages total is plenty).
+- You may reference your Task 1 build directly where relevant instead of re-explaining
+  concepts from scratch.
+
+
+SUBMISSION GUIDELINES
+
+Please send back:
+
+- Your Task 1 code/repository and short architecture note.
+- Your Task 2 written answers.
+- Your walkthrough video link.
+- Any supporting notes, evaluation results, or appendices.

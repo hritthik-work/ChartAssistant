@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart Assistant</title>
+    <meta name="description" content="Ask questions across synthetic patient charts." />
+    <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/assets/styles.css?v=5" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Chart Assistant home">
+        <span class="mark">C</span><span>Chart Assistant</span>
+      </a>
+      <button id="system-status" class="system-status checking" type="button" aria-describedby="status-tooltip">
+        <span id="status-icon" class="status-icon" aria-hidden="true">↻</span>
+        <span id="status-label">Checking system status</span>
+        <span id="status-tooltip" class="status-tooltip" role="tooltip">Running service checks…</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <h1>Ask your patient charts</h1>
+      </section>
+
+      <section class="query-card" aria-labelledby="question-label">
+        <label id="question-label" for="query">What would you like to know?</label>
+        <textarea id="query" rows="3" minlength="3" maxlength="1000" aria-describedby="query-error" placeholder="For example: What kidney condition is documented for patient 4?">What kidney condition is documented for patient 4?</textarea>
+        <p id="query-error" class="input-error hidden" role="alert">Enter a question with at least 3 characters.</p>
+        <div class="suggestions">
+          <span>Suggested questions</span>
+          <div class="examples" aria-label="Suggested questions">
+            <button data-query="What conditions are documented for patient 4?">Conditions</button>
+            <button data-query="What medications are listed for patient 1?">Medications</button>
+            <button data-query="Summarize the recent visits for patient 3.">Visit history</button>
+            <button data-query="Does patient 3 have diabetes, or is it family history only?">Family history</button>
+          </div>
+        </div>
+        <div class="query-actions">
+          <button id="submit" class="primary" type="button">Ask Chart Assistant <span>→</span></button>
+        </div>
+      </section>
+
+      <section id="loading" class="loading-card hidden" aria-live="polite" aria-busy="true">
+        <div class="spinner" aria-hidden="true"></div>
+        <div class="loading-copy">
+          <p class="eyebrow">LOOKING THROUGH THE CHARTS</p>
+          <h2>Finding an answer</h2>
+          <p id="loading-query" class="loading-query"></p>
+          <p id="loading-status">Understanding the question.</p>
+          <ol class="answer-steps">
+            <li class="active" data-loading-step="0"><span>1</span> Understand</li>
+            <li data-loading-step="1"><span>2</span> Search charts</li>
+            <li data-loading-step="2"><span>3</span> Prepare answer</li>
+          </ol>
+          <div class="loading-meta"><span id="loading-elapsed">0s elapsed</span></div>
+          <button id="cancel" class="text-button danger" type="button">Cancel</button>
+        </div>
+      </section>
+
+      <section id="result" class="result hidden" aria-live="polite">
+        <div class="result-head">
+          <div><p class="eyebrow">CHART ASSISTANT</p><h2 id="status-title">Answer</h2></div>
+          <span id="patient-badge" class="patient-badge hidden"></span>
+        </div>
+        <p id="answer" class="answer"></p>
+        <div id="tool-panel" class="tool-panel hidden"></div>
+        <div class="sources-section">
+          <h3>Sources</h3>
+          <div id="citations" class="source-list"></div>
+        </div>
+        <details class="answer-details">
+          <summary>Answer details</summary>
+          <div class="details-grid">
+            <div>
+              <h3>About this answer</h3>
+              <div class="badges"><span id="status-badge" class="badge"></span><span id="confidence-badge" class="badge"></span></div>
+              <dl id="controls"></dl>
+              <h3>What may be missing</h3><ul id="missing"></ul>
+            </div>
+            <div><h3>Technical trace</h3><pre id="trace"></pre></div>
+          </div>
+        </details>
+      </section>
+
+      <section class="knowledge" aria-labelledby="knowledge-title">
+        <div class="knowledge-head">
+          <div>
+            <h2 id="knowledge-title">Add patient charts</h2>
+          </div>
+          <div id="knowledge-stats" class="stats" aria-live="polite"></div>
+        </div>
+
+        <form id="upload-form" class="upload-panel">
+          <div class="field-row">
+            <label for="patient-reference">Patient ID, name, or chart number</label>
+            <input id="patient-reference" name="patient_reference" maxlength="80" placeholder="Example: SYN-P006 or Demo Patient 6" autocomplete="off" />
+          </div>
+
+          <input id="chart-files" class="visually-hidden" type="file" multiple accept=".pdf,.docx,.txt,.md" />
+          <label id="dropzone" class="dropzone" for="chart-files">
+            <span class="upload-icon" aria-hidden="true">↑</span>
+            <strong>Drop chart files here or choose files</strong>
+            <span>PDF, DOCX, TXT, or Markdown · up to 5 MB each</span>
+          </label>
+          <div id="file-list" class="file-list hidden" aria-live="polite"></div>
+
+          <label class="confirmation">
+            <input id="synthetic-confirmed" type="checkbox" />
+            <span>I confirm these files contain synthetic demo data only.</span>
+          </label>
+          <p id="upload-error" class="input-error hidden" role="alert"></p>
+          <div class="upload-actions">
+            <button id="upload-submit" class="secondary" type="submit">Add charts</button>
+          </div>
+        </form>
+
+        <section id="upload-progress" class="upload-progress hidden" aria-live="polite" aria-busy="true">
+          <div class="progress-heading">
+            <div><p class="eyebrow">ADDING CHARTS</p><h3 id="upload-progress-title">Uploading files</h3></div>
+            <span id="upload-percent">0%</span>
+          </div>
+          <div class="progress-track" aria-hidden="true"><span id="upload-progress-bar"></span></div>
+          <ol class="upload-timeline">
+            <li class="active" data-upload-step="0"><span>1</span><div><strong>Uploading files</strong><small>Sending selected chart files</small></div></li>
+            <li data-upload-step="1"><span>2</span><div><strong>Reading documents</strong><small>Extracting text and sections</small></div></li>
+            <li data-upload-step="2"><span>3</span><div><strong>Preparing content</strong><small>Splitting charts into searchable sections</small></div></li>
+            <li data-upload-step="3"><span>4</span><div><strong>Updating knowledge base</strong><small>Adding new and changed chart content</small></div></li>
+            <li data-upload-step="4"><span>5</span><div><strong>Ready</strong><small>Available for new questions</small></div></li>
+          </ol>
+          <p id="upload-message">Starting upload…</p>
+          <p id="upload-elapsed" class="field-help">0s elapsed</p>
+        </section>
+      </section>
+    </main>
+
+    <footer>Synthetic demonstration only. Do not upload real patient information or use answers for clinical decisions.</footer>
+    <script src="/assets/app.js?v=5" defer></script>
+  </body>
+</html>

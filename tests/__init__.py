@@ -1,0 +1,1 @@
+"""Chart Assistant test suite."""

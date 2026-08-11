@@ -1,0 +1,14 @@
+[
+  {"case_id":"E01","query":"What kidney condition is documented for SYN-P004?","patient_id":"SYN-P004","required_terms":["kidney"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P004-002-chunk-001"]},
+  {"case_id":"E02","query":"Does SYN-P001 have chronic kidney disease?","patient_id":"SYN-P001","required_terms":["kidney"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P001-001-chunk-002"]},
+  {"case_id":"E03","query":"What cardiovascular condition was treated for SYN-P002?","patient_id":"SYN-P002","required_terms":["heart"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P002-002-chunk-002"]},
+  {"case_id":"E04","query":"Does SYN-P003 have diabetes or only family history?","patient_id":"SYN-P003","required_terms":["family","diabetes"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P003-001-chunk-001"]},
+  {"case_id":"E05","query":"What lasting effect is documented after SYN-P005's stroke?","patient_id":"SYN-P005","required_terms":["stroke"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P005-001-chunk-001"]},
+  {"case_id":"E06","query":"What does the documentation guide say about laboratory-only findings?","required_terms":["laboratory"],"expected_role":"documentation_guide","expected_chunk_ids":["DOC-GUIDE-004-chunk-001"]},
+  {"case_id":"E07","query":"What does the payer policy require for patient-specific support?","required_terms":["support"],"expected_role":"payer_policy","expected_chunk_ids":["DOC-POLICY-001-chunk-001"]},
+  {"case_id":"E08","query":"What medications are documented for patient 1?","patient_id":"SYN-P001","required_terms":["medication"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P001-003-chunk-002"]},
+  {"case_id":"E09","query":"Is COPD described as stable for SYN-P002?","patient_id":"SYN-P002","required_terms":["copd","stable"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P002-003-chunk-002"]},
+  {"case_id":"E10","query":"Is anemia confirmed for SYN-P004?","patient_id":"SYN-P004","required_terms":["anemia"],"expected_role":"clinical_note","expected_chunk_ids":["DOC-CLIN-P004-003-chunk-002"]},
+  {"case_id":"E11","query":"quantum banana astronomy","required_terms":[],"expected_role":null,"expect_empty":true},
+  {"case_id":"E12","query":"What does the documentation guide say about conditions under evaluation?","required_terms":["evaluation"],"expected_role":"documentation_guide","expected_chunk_ids":["DOC-GUIDE-001-chunk-002"]}
+]

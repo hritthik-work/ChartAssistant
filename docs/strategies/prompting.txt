@@ -1,0 +1,49 @@
+PROMPTING STRATEGY - QUICK DEV LOG
+
+When I started this, my first prompt was very basic. I told the model to search the charts, answer
+the question, and add sources. It worked for easy questions, but the answers were sometimes vague.
+It could also mix up family history with the patient's own condition or forget to explain when some
+information was missing.
+
+So I kept improving the prompt one version at a time instead of writing one huge prompt on day one.
+
+V1 - SIMPLE ZERO-SHOT PROMPT
+
+This was the starting point. It had the main idea: search first, do not make things up, and cite the
+chart. It was short and easy to understand, but it left too much for the model to guess.
+
+V2 - CLEAR STEPS
+
+I added an order for the model to follow: understand the question, search once, use the ICD tool only
+when asked, and then answer. This made the flow more stable. I also added patient isolation because
+one patient's note should never be used for another patient.
+
+V3 - FEW-SHOT EXAMPLES
+
+Some mistakes were easier to explain with examples than with more rules. I added small examples for
+a normal chart answer, family history, and an ICD lookup. This helped the model understand that
+"family history of diabetes" does not mean the patient has diabetes.
+
+V4 - STRONGER SAFETY AND CHECKS
+
+This version added clearer source rules, prompt-injection protection, and a final check before the
+answer. It was safer, but it started feeling a little long and heavy for such a small app.
+
+V5 - THE FINAL VERSION
+
+V5 is the best balance I found. It keeps the useful parts from the older prompts, but puts them into
+seven clean sections. It tells the model what it can trust, when to use tools, how to use sources,
+when to give a partial answer, and what to check before replying.
+
+The application uses system_v5.txt by default. The prompt version is also saved in the response
+trace, so I can confirm which prompt created an answer.
+
+WHY I STILL CHECK THE ANSWER IN CODE
+
+Even a good prompt can fail sometimes. Because of that, Python still checks the final JSON, patient,
+chunk IDs, exact quotes, answer status, and ICD tool result. If the first answer is wrong, the app
+gets one repair attempt with no tools. If it is still wrong, the app returns an error instead of
+showing an unsupported answer.
+
+That was the main lesson from these prompt versions: the prompt guides the model, but the code is
+what actually keeps the result inside the rules.
