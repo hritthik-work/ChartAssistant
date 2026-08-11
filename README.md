@@ -4,14 +4,14 @@ Chart Assistant is a grounded question-answering system for synthetic patient ch
 mention a patient naturally, ask about diagnoses, medications, visits, or coding, and get an answer
 that is limited to that patient's documents with the exact chart sources shown beside it.
 
-**Release v1.0.1 · [Open the live application](https://chart-assistant.vercel.app)**
+**Release v1.0.1 · [Open the live application](https://health-chart-assistant.vercel.app)**
 
 This is my solution for the RAAPID Applied AI Engineer take-home assignment. I treated the task as
 more than a prompt demo: the project includes ingestion, patient-safe retrieval, tool calling,
 schema validation, failure handling, evaluations, health checks, and a small interface that an
 interviewer can use without knowing the backend.
 
-[Try the live system](https://chart-assistant.vercel.app) ·
+[Try the live system](https://health-chart-assistant.vercel.app) ·
 [Architecture](docs/architecture.md) · [Changelog](CHANGELOG.md)
 
 > The repository and hosted application use fictional data only. They are not intended for real
@@ -31,7 +31,8 @@ across several patient charts.
 
 ## Try it live
 
-The current build is running at **[chart-assistant.vercel.app](https://chart-assistant.vercel.app)**.
+The current build is running at
+**[health-chart-assistant.vercel.app](https://health-chart-assistant.vercel.app)**.
 The header includes a system-status control that checks Azure OpenAI and Azure AI Search, so a
 service problem is visible before a question is submitted.
 
@@ -275,7 +276,7 @@ tests/                     unit, integration, API, and evaluator-style tests
 GitHub Actions validates pull requests, builds a Python wheel, and runs the retrieval evaluations.
 The Vercel preview workflow builds one immutable artifact, deploys it, checks the public page, and
 then calls every live Azure dependency. The current stable review URL is
-**[chart-assistant.vercel.app](https://chart-assistant.vercel.app)**.
+**[health-chart-assistant.vercel.app](https://health-chart-assistant.vercel.app)**.
 
 The application uses semantic versions. `v1.0.1` is the current application release, `v5` is the
 prompt revision, and the `v1` search-index suffix is its schema generation; they are separate version
